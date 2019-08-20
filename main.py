@@ -77,8 +77,8 @@ def main(args):
 
         print("Iteration: {0}\tLosses: {1}".format(i+1, losses.item()))
 
-        # losses.backward(retain_graph=True)
-        losses.backward()
+        losses.backward(retain_graph=True)
+        # losses.backward()
 
         optimizer.step()
 
