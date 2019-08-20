@@ -59,7 +59,7 @@ def main(args):
                    ).to(device)
     ex.train()
 
-    for i in range(10):
+    for i in range(args.instances):
 
         optimizer.zero_grad()
 
@@ -93,6 +93,11 @@ if __name__ == '__main__':
                         type=float,
                         default=0.001,
                         help="Learning rate")
+    parser.add_argument("-i",
+                        "--instances",
+                        type=int,
+                        default=10,
+                        help="Number of Instances")
 
     arg = parser.parse_args()
 
